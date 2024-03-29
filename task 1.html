@@ -7,7 +7,7 @@
 <style>
   body { 
     font-family: Arial, sans-serif;
-    margin: 0;
+    margin: 0; 
     padding: 0;
     background-color: #f4f4f4;
   }
@@ -20,10 +20,6 @@
     background-color: purple;
     border-radius: 20px;
   }
-
-  /* .accordion-item {
-    border-bottom: 1px solid #ddd;
-  } */
 
   .accordion-header {
     padding: 10px 20px;
@@ -38,21 +34,20 @@
     transition: transform 0.3s ease;
   }
 
-  .accordion-item.active .accordion-header::after {
+  .accordion-item[open] .accordion-header::after {
     content: '\25BC'; /* Unicode character for down-pointing arrow (▼) */
     transform: rotate(90deg);
   }
 
   .accordion-content {
     padding: 0 20px;
-    max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-
+    max-height: 0;
     background-color: #ddd;
   }
 
-  .accordion-item.active .accordion-content {
+  .accordion-item[open] .accordion-content {
     max-height: 2000px; /* Set a maximum height for the content */
     transition: max-height 0.4s ease-in;
   }
@@ -61,42 +56,25 @@
 <body>
 
 <div class="accordion">
-  <div class="accordion-item">
-    <div class="accordion-header">Section #1</div>
+  <details class="accordion-item" open>
+    <summary class="accordion-header">Section #1</summary>
     <div class="accordion-content">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, earum, magnam? Alias error, placeat! Accusamus accusantium alias eum iure laborum odit porro quaerat? Animi enim id labore officiis quam sint.</p>
     </div>
-  </div>
-  <div class="accordion-item">
-    <div class="accordion-header">Section #2</div>
+  </details>
+  <details class="accordion-item">
+    <summary class="accordion-header">Section #2</summary>
     <div class="accordion-content">
       <p>Content for section 2 goes here.</p>
     </div>
-  </div>
-  <div class="accordion-item">
-    <div class="accordion-header">Section #3</div>
+  </details>
+  <details class="accordion-item">
+    <summary class="accordion-header">Section #3</summary>
     <div class="accordion-content">
       <p>Content for section 3 goes here.</p>
     </div>
-  </div>
+  </details>
 </div>
-
-<script>
-  var accItem = document.getElementsByClassName('accordion-header');
-  for (var i = 0; i < accItem.length; i++) {
-    accItem[i].addEventListener('click', toggleItem, false);
-  }
-
-  function toggleItem() {
-    var itemClass = this.parentNode.className;
-    for (var i = 0; i < accItem.length; i++) {
-      accItem[i].parentNode.className = 'accordion-item';
-    }
-    if (itemClass == 'accordion-item') {
-      this.parentNode.className = 'accordion-item active';
-    }
-  }
-</script>
 
 </body>
 </html>
