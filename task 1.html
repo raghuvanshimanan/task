@@ -28,16 +28,13 @@
   }
 
   .accordion-header::after {
-    content: '\25B6'; /* Unicode character for right-pointing arrow (▶) */
+    /* content: '\25B6'; Unicode character for right-pointing arrow (▶) */
     font-size: 13px;
     float: right;
     transition: transform 0.3s ease;
   }
 
-  .accordion-item[open] .accordion-header::after {
-    content: '\25BC'; /* Unicode character for down-pointing arrow (▼) */
-    transform: rotate(90deg);
-  }
+  
 
   .accordion-content {
     padding: 0 20px;
