@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let income = 0;
   let expense = 0;
   let transcations = [];
-
+ 
   updateUI();
   loadFromLocalStorage();
 
