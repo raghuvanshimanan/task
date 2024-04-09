@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+    <title>Expense Tracker</title>
+  </head>
+  <body>
+    <div class="main-app">
+      <header class="header">
+        <button class="btn-reset">Reset</button>
+        <h1 class="app-name">Expense Tracker</h1>
+      </header>
+      <main class="main">
+        <div class="balance">
+          <div class="balance__income balance-flex">
+            <p>Total Income</p>
+            <p class="income-amount">₹ 0</p>
+          </div>
+          <div class="balance__total balance-flex">
+            <p>Your Balance</p>
+            <p class="balance-amount">₹ 0</p>
+          </div>
+          <div class="balance__expense balance-flex">
+            <p>Total Expense</p>
+            <p class="expense-amount">₹ 0</p>
+          </div>
+        </div>
+        <div class="transcations">
+          <div class="head">
+            <p class="title">Transactions</p>
+          </div>
+          <div class="details">
+            
+        </div>
+        <div class="add-tran">
+          <p class="add-tran_title">Add Transactions</p>
+          <div class="add-tran__input">
+            <form class="inputs" id="tran-form">
+              <div class="input">
+                <label for="name">Name</label>
+                <input type="text" class="input-name" required/>
+              </div>
+              <div class="input">
+                <label for="amount">Amount</label>
+                <input type="number" class="input-amount" required/>
+              </div>
+              <div class="input">
+                <label for="date">Date</label>
+                <input type="date" class="input-date" required/>
+              </div>
+              <div class="input">
+                <label for="type">Type</label>
+                <select name="type" class="input-type">
+                  <option value="other">Other</option>
+                  <option value="food">Food</option>
+                  <option value="petrol">Petrol</option>
+                  <option value="clothes">Clothes</option>
+                </select>
+              </div>
+              <button type="submit" class="btn-income btn" data-action="income">
+                Add Income
+              </button>
+              <button
+                type="submit"
+                class="btn-expense btn"
+                data-action="expense"
+              >
+                Add Expense
+              </button>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
